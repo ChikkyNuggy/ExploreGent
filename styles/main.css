@@ -1,0 +1,155 @@
+@import url('https://fonts.googleapis.com/css2?family=Fira+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+:root{
+    --black: #181818;
+    --white: #ffffff;
+    --grey: #2B2B2B;
+}
+
+body{
+    margin: 0;
+    padding: 0;
+    font-family: 'Fira Sans', sans-serif;
+    background-color: var(--black);
+    color: var(--white);
+    overflow-x: hidden;
+}
+
+nav{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;    
+    max-width: 120rem;
+    padding: 1rem clamp(1rem, 4vh, 8rem);
+    margin: 0 auto;
+}
+
+.logo{
+    display: inline-block;
+    font-size: 2rem;
+    font-weight: bold;
+    margin: 0;
+    padding: .7rem 1rem;
+    color: var(--black);
+    background-color: var(--white);
+    border-radius: 0.625rem;
+    cursor: pointer;
+}
+
+nav ul{
+    display: flex;
+    list-style: none;
+    gap: 2.5rem;
+    font-size: 1.25rem;
+    font-weight: semibold;
+    margin: 0;
+    padding: 0;
+}
+
+nav ul li{
+    cursor: pointer;
+}
+
+.hero{
+    position: relative;
+    height: 60dvh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.hero h1 {
+    position: relative;
+    z-index: 2;
+    font-size: 13rem;
+    font-weight: 900;
+    text-transform: uppercase;
+}
+
+.hero svg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -999;
+    width: 140vw;
+    height: auto;
+}
+
+main {
+    max-width: 100rem;
+    padding: 0 clamp(1rem, 4vh, 8rem);
+    margin: 0 auto;
+}
+
+.btn {
+    padding: 0;
+    width: 12rem;
+    height: 2.5rem;
+    border: 1px solid var(--white);
+    box-shadow: var(--white) .2rem .2rem;
+    background: var(--black);
+    color: var(--white);
+    font-size: 1.2rem;
+    font-weight: 700;
+    transition: all .3s;
+    cursor: pointer;
+}
+
+.btn:hover {
+    transform: translateX(0.2rem) translateY(0.2rem);
+    box-shadow: none;
+}
+
+footer{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+    margin-top: 5rem;
+}
+
+footer .main-footer{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 25rem;
+}
+
+footer .main-footer .logo{
+    font-size: 3rem;
+    padding: 1.05rem 1.5rem;
+    border-radius: 0.9375rem;
+}
+
+footer .main-footer ul{
+    display: flex;
+    list-style: none;
+    gap: 2.5rem;
+    font-weight: 500;
+}
+
+footer .main-footer ul li{
+    cursor: pointer;
+}
+
+
+#bg-logo-1 {
+    position: absolute;
+    top: 80%;
+    right: 0;
+    z-index: -999;
+    width: 54.813rem;
+    height: auto;
+    transform: rotate(-27.167deg) translateX(40%);
+}
+
+#bg-logo-2 {
+    position: absolute;
+    top: 110%;
+    left: 0;
+    z-index: -999;
+    width: 39.75rem;
+    height: auto;
+    transform: rotate(23.69deg) translateX(-10%);
+}

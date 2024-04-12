@@ -1,0 +1,82 @@
+<ul class="categories">
+    {{#each categories}}
+    <li>
+        <h2>{{this.name}}</h2> <!-- replace categoryName with the actual property name -->
+    </li>
+    {{/each}}
+</ul>
+
+<ul>
+    {{#each explores}}
+    <li>
+        <h2>{{this.name}}</h2> <!-- replace categoryName with the actual property name -->
+    </li>
+    {{/each}}
+</ul>
+
+<style>
+    .categories {
+        display: flex;
+        justify-content: space-around;
+        list-style: none;
+        margin: 0;
+        padding: 0;
+    }
+
+    .categories li {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: rgba(170, 0, 0, 0.25);
+        border: 1px solid #A00;
+        border-radius: 3.125rem;
+        width: 9.375rem;
+        height: 3.063rem;
+        cursor: pointer;
+    }
+
+    .categories li:hover {
+        background-color: #A00;
+    }
+
+    .categories li h2 {
+        font-size: 1rem;
+        font-weight: 600;
+    }
+
+    .categories li:nth-child(2){
+        border: 1px solid #002FD3;
+        background: rgba(0, 47, 211, 0.25);
+    }
+
+    .categories li:nth-child(2):hover{
+        background: #002FD3;
+    }
+
+    .categories li:nth-child(3){
+        border: 1px solid #00A71B;
+        background: rgba(0, 167, 27, 0.25);
+    }
+
+    .categories li:nth-child(3):hover{
+        background: #00A71B;
+    }
+
+    .categories li:nth-child(4){
+        border: 1px solid #DD6A00;
+        background: rgba(221, 106, 0, 0.25);
+    }
+
+    .categories li:nth-child(4):hover{
+        background: #DD6A00;
+    }
+
+    .categories li:nth-child(5){
+        border: 1px solid #7800D6;
+        background: rgb(120, 0, 214, 0.25);
+    }
+
+    .categories li:nth-child(5):hover{
+        background: #7800D6;
+    }
+</style>
