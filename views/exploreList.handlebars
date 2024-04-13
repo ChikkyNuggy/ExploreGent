@@ -1,0 +1,11 @@
+<ul class="explores" hx-target="#container" hx-push-url="true">
+    {{#each explores}}
+    <li>
+        <img src="/public/images/{{this.image_path}}" alt="{{this.name}}">
+        <div class="info">
+            <h2>{{this.name}}</h2>
+            <p>{{this.discription}}</p>
+        </div>
+    </li>
+    {{/each}}
+</ul>

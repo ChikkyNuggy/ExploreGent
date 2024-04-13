@@ -1,0 +1,100 @@
+<div class="walk-container">
+    {{!-- style="width: 100%; height: 100vh;" --}}
+    <div class="map" id="map" ></div>
+    <div class="routes">
+        <ul>
+            <li tabindex="0">
+                <h2>Route 1</h2>
+            </li>
+            <li tabindex="0">
+                <h2>Route 1</h2>
+            </li>
+            <li tabindex="0">
+                <h2>Route 1</h2>
+            </li>
+            <li tabindex="0">
+                <h2>Route 1</h2>
+            </li>
+            <li tabindex="0">
+                <h2>Route 1</h2>
+            </li>
+            <li tabindex="0">
+                <h2>Route 1</h2>
+            </li>
+            <li tabindex="0">
+                <h2>Route 1</h2>
+            </li>
+            <li tabindex="0">
+                <h2>Route 1</h2>
+            </li>
+            <li tabindex="0">
+                <h2>Route 1</h2>
+            </li>
+            <li tabindex="0">
+                <h2>Route 1</h2>
+            </li>
+            <li tabindex="0">
+                <h2>Route 1</h2>
+            </li>
+            <li tabindex="0">
+                <h2>Route 1</h2>
+            </li>
+            <li tabindex="0">
+                <h2>Route 1</h2>
+            </li>
+            <li tabindex="0">
+                <h2>Route 1</h2>
+            </li>
+            <li tabindex="0">
+                <h2>Route 1</h2>
+            </li>
+            <li tabindex="0">
+                <h2>Route 1</h2>
+            </li>
+        </ul>
+    </div>
+</div>
+
+<script src="/public/scripts/walk.js" type="module"></script>
+<style>
+    .walk-container {
+        display: flex;
+        gap: 2rem;
+        width: 100%;
+        height: 100vh;
+        margin: 0;
+    }
+
+    .map {
+        flex: 2;
+        border: 1px solid var(--white);
+    }
+
+    .routes {
+        flex: 1;
+        border: 1px solid var(--white);
+    }
+
+    .routes ul {
+        list-style: none;
+        height: 100vh;
+        overflow: auto;
+        margin: 0;
+        padding: 0;
+    }
+
+    .routes li {
+        padding: 2rem;
+        width: 75%;
+        margin: 0 auto;
+        border-bottom: 1px solid var(--white);
+    }
+
+    .routes li:last-child {
+        border-bottom: none;
+    }
+
+    .routes li h2 {
+        margin: 0;
+    }
+</style>

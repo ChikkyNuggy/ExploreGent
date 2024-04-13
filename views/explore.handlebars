@@ -1,15 +1,19 @@
-<ul class="categories">
+<ul class="categories" hx-target=".explores" hx-swap="outerHTML">
     {{#each categories}}
-    <li>
-        <h2>{{this.name}}</h2> <!-- replace categoryName with the actual property name -->
+    <li hx-get="/explore/{{this.id}}">
+        <h2>{{this.name}}</h2>
     </li>
     {{/each}}
 </ul>
 
-<ul>
+<ul class="explores" hx-target="#container" hx-push-url="true">
     {{#each explores}}
     <li>
-        <h2>{{this.name}}</h2> <!-- replace categoryName with the actual property name -->
+        <img src="/public/images/{{this.image_path}}" alt="{{this.name}}">
+        <div class="info">
+            <h2>{{this.name}}</h2>
+            <p>{{this.discription}}</p>
+        </div>
     </li>
     {{/each}}
 </ul>
@@ -21,6 +25,7 @@
         list-style: none;
         margin: 0;
         padding: 0;
+        margin-bottom: 5rem;
     }
 
     .categories li {
@@ -78,5 +83,52 @@
 
     .categories li:nth-child(5):hover{
         background: #7800D6;
+    }
+
+    .explores {
+        display: flex;
+        flex-direction: column;
+        list-style: none;
+        gap: 3rem;
+        margin: 0;
+        padding: 0;
+    }
+
+    .explores li {
+        display: flex;
+        gap: 1rem;
+        width: 50rem;
+    }
+
+    .explores li:nth-child(even){
+        align-self: flex-end;
+        text-align: right;
+        flex-direction: row-reverse;
+    }
+
+    .explores li img{
+        width: 15.063rem;
+        height: 10.063rem;
+        object-fit: cover;
+        object-position: 0 20%;
+    }
+
+    .explores li .info {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        gap: 1rem;
+    }
+
+    .explores li h2 {
+        font-size: 3rem;
+        font-weight: 900;
+        margin: 0;
+    }
+
+    .explores li p {
+        font-size: 1rem;
+        font-weight: 400;
+        margin: 0;
     }
 </style>

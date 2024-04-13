@@ -61,7 +61,7 @@ nav ul li{
 .hero h1 {
     position: relative;
     z-index: 2;
-    font-size: 13rem;
+    font-size: 13dvw;
     font-weight: 900;
     text-transform: uppercase;
 }
@@ -133,23 +133,26 @@ footer .main-footer ul li{
     cursor: pointer;
 }
 
+.bg-logo {
+    overflow: hidden;
+}
 
 #bg-logo-1 {
     position: absolute;
-    top: 80%;
+    top: 95dvh;
     right: 0;
     z-index: -999;
-    width: 54.813rem;
+    width: 50dvw;
     height: auto;
     transform: rotate(-27.167deg) translateX(40%);
 }
 
 #bg-logo-2 {
     position: absolute;
-    top: 110%;
+    top: 120dvh;
     left: 0;
     z-index: -999;
-    width: 39.75rem;
+    width: 30dvw;
     height: auto;
     transform: rotate(23.69deg) translateX(-10%);
 }

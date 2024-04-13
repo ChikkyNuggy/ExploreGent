@@ -1,6 +1,6 @@
 import express from 'express';
 import { getEvents } from '../controllers/EventsController.js';
-import { getExplore } from '../controllers/ExploreController.js';
+import { getExplore, getExploreCategory } from '../controllers/ExploreController.js';
 import { getNews } from '../controllers/NewsController.js';
 import { getWalk } from '../controllers/WalkController.js';
 
@@ -12,6 +12,9 @@ router.route('/')
     });
 router.route('/explore')
     .get(getExplore);
+
+router.route('/explore/:id')
+    .get(getExploreCategory);
 
 router.route('/news')
     .get(getNews);

@@ -13,7 +13,7 @@ const app = express();
 app.engine('handlebars', engine());
 app.set('view engine', 'handlebars');
 app.set('views', './views');
-app.use('/styles', express.static(path.join(__dirname, 'styles')));
+app.use('/public', express.static(path.join(__dirname, 'public')));
 app.use('/', router);
 
 app.listen(3000, () => {
