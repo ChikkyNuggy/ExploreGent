@@ -3,11 +3,10 @@ const View = ol.View;
 const TileLayer = ol.layer.Tile;
 const BingMaps = ol.source.BingMaps;
 const fromLonLat = ol.proj.fromLonLat;
-
-// Oefening 2
-// Maak een nieuwe kaart target: map2. Gebruik ipv OpenStreetMaps nu Bing maps voor je kaartweergave.
-// Gebruik volgende key: AsP27pmfd6otk9xrCXoVZMoLm3fqFcEItMSuhDSVtD6jCI7jJmZWNyiTt-yPdXvq
-// Tip: imagerySet: "Aerial",
+const Feature = ol.Feature;
+const LineString = ol.geom.LineString;
+const VectorLayer = ol.layer.Vector;
+const VectorSource = ol.source.Vector;
 
 let ghentCords = fromLonLat([3.722461, 51.053828]);
 
@@ -27,3 +26,19 @@ const map = new Map({
   }),
   controls: [],
 });
+
+let features = routes.map(route => {
+  let coordinates = route.coordinates.coordinates.map(coord => fromLonLat(coord));
+  let lineString = new LineString(coordinates);
+  return new Feature(lineString);
+});
+
+let vectorSource = new VectorSource({
+  features: features
+});
+
+let vectorLayer = new VectorLayer({
+  source: vectorSource
+});
+
+map.addLayer(vectorLayer);

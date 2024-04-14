@@ -1,5 +1,5 @@
 import express from 'express';
-import { engine } from 'express-handlebars';
+import exphbs from 'express-handlebars';
 import path from 'path';
 import { fileURLToPath } from 'url';
 import { dirname } from 'path';
@@ -10,7 +10,15 @@ const __dirname = dirname(__filename);
 
 const app = express();
 
-app.engine('handlebars', engine());
+const hbs = exphbs.create({
+  helpers: {
+      json: function (context) {
+          return JSON.stringify(context);
+      }
+  }
+});
+
+app.engine('handlebars', hbs.engine);
 app.set('view engine', 'handlebars');
 app.set('views', './views');
 app.use('/public', express.static(path.join(__dirname, 'public')));
