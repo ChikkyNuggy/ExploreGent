@@ -1,4 +1,5 @@
 import { pool } from "../db.js";
+// import { funBg } from "../public/scripts/bg.js";
 
 export const getEvents = (req, res) => {
     let query = 'SELECT * FROM events';

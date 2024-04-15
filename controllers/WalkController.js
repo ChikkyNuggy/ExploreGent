@@ -35,5 +35,5 @@ export const getRoute = async (req, res) => {
     const route = routes.find(route => {
         return route.id === parseInt(routeId);
     });
-    res.render('walk', { route, routes, title: 'take a walk', layout: false});
+    res.render('map', { route, title: 'take a walk', routes});
 };

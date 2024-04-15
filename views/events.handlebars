@@ -1,7 +1,7 @@
 <div class="container">
     <div class="search-filter" >
         <div class="search">
-            <input type="text" name="term" id="term" hx-target=".events" hx-trigger="keyup change" hx-get="/events/filter" hx-include="#date">
+            <input type="text" name="term" id="term" placeholder="Search..." hx-target=".events" hx-trigger="keyup change" hx-get="/events/filter" hx-include="#date">
         </div>
         <div class="filter">
             <input type="date" name="date" id="date" hx-target=".events" hx-trigger="change" hx-get="/events/filter" hx-include="#term">
@@ -47,6 +47,7 @@
         color: var(--white);
         border: 3px solid var(--white);
         margin-bottom: 3rem;
+        font-family: 'Fira Sans', sans-serif;
     }
 
     .search{

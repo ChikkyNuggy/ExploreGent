@@ -1,0 +1,124 @@
+<div class="container">
+    <div class="search-filter" >
+        <div class="search">
+            <input type="text" name="term" id="term" placeholder="Search..." hx-target=".news" hx-trigger="keyup change" hx-get="/news/filter">
+        </div>
+        {{!-- <div class="filter">
+            <input type="date" name="date" id="date" hx-target=".events" hx-trigger="change" hx-get="/events/filter" hx-include="#term">
+            <select name="category" id="category"></select>
+        </div> --}}
+    </div>
+    <div class="news">
+        <ul>
+            {{#each articles}}
+            <li hx-get="{{this.link}}" hx-trigger="click">
+                <img src="/public/images/{{this.image_path}}" alt="{{this.title}}">
+                <div class="news-info">
+                    <h2>{{this.title}}</h2>
+                </div>
+            </li>
+            {{/each}}
+        </ul>
+        {{!-- {{ totalPages}}
+        {{#if totalPages}}
+            <div class="pagination">
+                {{#each (range 1 totalPages)}}
+                    {{#if isCurrentPage}}
+                        <span>{{this}}</span>
+                    {{else}}
+                        <a href="/news?page={{this}}">{{this}}</a>
+                    {{/if}}
+                {{/each}}
+            </div>
+        {{/if}} --}}
+    </div>
+</div>
+
+<style>
+    .container {
+        display: flex;
+        flex-direction: column;
+        gap: 2rem;
+        width: 90%;
+        margin: 0 auto;
+    }
+
+    .search-filter {
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+        width: 70%;
+        margin: 0 auto;
+    }
+
+    .search-filter input{
+        width: 90%;
+        padding: .5rem 1.5rem;
+        background-color: var(--black);
+        color: var(--white);
+        border: 3px solid var(--white);
+        margin-bottom: 3rem;
+        font-family: 'Fira Sans', sans-serif;
+    }
+
+    .search{
+        width: 50%;
+    }
+
+    .filter{
+        width: 17%;
+    }
+
+    .filter input[type="date"]{
+        display: flex;
+        flex-direction: row-reverse;
+    }
+
+    .news ul{
+        list-style: none;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-around;
+        gap: 5rem;
+        padding: 0;
+        margin: 0 auto;
+        width: 100%;
+    }
+
+    .news li{
+        position: relative;
+        width: 23rem;
+        height: 23rem;
+        cursor: pointer;
+    }
+
+    .news li img{
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        position: absolute;
+        filter: brightness(80%);
+        transition: all .3s ease-in-out;
+    }
+
+    .news li:hover img{
+        filter: brightness(100%);
+    }
+
+    .news li .news-info{
+        position: absolute;
+        width: 75%;
+        bottom: 0;
+        left: 0;
+        padding: 1rem;
+    }
+
+    .news li h2{
+        margin: 0;
+        color: var(--black);
+        background-color: var(--white);
+        padding: .5rem 1rem;
+        font-size: 125%;
+        font-weight: semibold;
+    }
+</style>

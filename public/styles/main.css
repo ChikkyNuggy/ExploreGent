@@ -6,14 +6,24 @@
     --grey: #2B2B2B;
 }
 
+/* html{
+    overflow: hidden;
+    width: 100%;
+} */
+
 body{
     margin: 0;
     padding: 0;
+    height: 100%;
+    width: 100%;
     font-family: 'Fira Sans', sans-serif;
     background-color: var(--black);
     color: var(--white);
+    /* overflow-y: scroll; */
     overflow-x: hidden;
 }
+
+body {height: 100%;}
 
 nav{
     display: flex;
@@ -155,7 +165,12 @@ footer .main-footer ul li{
 }
 
 .bg-logo {
+    position: absolute;
     overflow: hidden;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: -999;
 }
 
 #bg-logo-1 {

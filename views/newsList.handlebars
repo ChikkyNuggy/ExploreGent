@@ -1,0 +1,24 @@
+<div class="news">
+        <ul>
+            {{#each articles}}
+            <li hx-get="{{this.link}}" hx-trigger="click">
+                <img src="/public/images/{{this.image_path}}" alt="{{this.title}}">
+                <div class="news-info">
+                    <h2>{{this.title}}</h2>
+                </div>
+            </li>
+            {{/each}}
+        </ul>
+        {{!-- {{ totalPages}}
+        {{#if totalPages}}
+            <div class="pagination">
+                {{#each (range 1 totalPages)}}
+                    {{#if isCurrentPage}}
+                        <span>{{this}}</span>
+                    {{else}}
+                        <a href="/news?page={{this}}">{{this}}</a>
+                    {{/if}}
+                {{/each}}
+            </div>
+        {{/if}} --}}
+    </div>

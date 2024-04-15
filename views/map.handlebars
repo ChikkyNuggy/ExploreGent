@@ -3,18 +3,18 @@
         <script>
             let routes = {{{json route}}}
         </script>
+        {{!-- {{json route}} --}}
     </div>
     <div class="routes">
-        <ul hx-target=".walk-container" hx-swap="outerHTML" hx-push-url="true">
+        <ul hx-target=".walk-container" hx-swap="outerHTML">
             {{#each routes}}
-            {{!-- hx-get="walk/routes/{{this.id}}" hx-trigger="click" --}}
-            <li tabindex="0" >
+            <li tabindex="0" hx-get="/walk/routes/{{this.id}}" hx-trigger="click">
                 <h2>{{this.name}}</h2>
             </li>
             {{/each}}
         </ul>
     </div>
-    <script src="/public/scripts/walk.js" type="module"></script>
+    <script src="/public/scripts/route.js" type="module"></script>
 </div>
 
 

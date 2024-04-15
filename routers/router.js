@@ -1,7 +1,7 @@
 import express from 'express';
 import { getEvents, filterEvents } from '../controllers/EventsController.js';
 import { getExplore, getExploreCategory } from '../controllers/ExploreController.js';
-import { getNews } from '../controllers/NewsController.js';
+import { getNews, filterNews } from '../controllers/NewsController.js';
 import { getWalk, getRoute } from '../controllers/WalkController.js';
 
 const router = express.Router();
@@ -18,6 +18,9 @@ router.route('/explore/:id')
 
 router.route('/news')
     .get(getNews);
+
+router.route('/news/filter')
+    .get(filterNews);
 
 router.route('/walk')
     .get(getWalk);
