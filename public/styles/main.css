@@ -50,6 +50,27 @@ nav ul li{
     cursor: pointer;
 }
 
+nav ul li a{
+    position: relative;
+    text-decoration: none;
+    color: var(--white);
+}
+
+nav ul li a::after{
+    content: '';
+    position: absolute;
+    bottom: -25%;
+    left: 0;
+    width: 0;
+    height: 3px;
+    background-color: var(--white);
+    transition: width .3s;
+}
+
+nav ul li:hover a::after{
+    width: 100%;
+}
+
 .hero{
     position: relative;
     height: 60dvh;

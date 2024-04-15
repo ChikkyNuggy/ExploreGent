@@ -1,5 +1,5 @@
 import express from 'express';
-import { getEvents } from '../controllers/EventsController.js';
+import { getEvents, filterEvents } from '../controllers/EventsController.js';
 import { getExplore, getExploreCategory } from '../controllers/ExploreController.js';
 import { getNews } from '../controllers/NewsController.js';
 import { getWalk, getRoute } from '../controllers/WalkController.js';
@@ -27,5 +27,8 @@ router.route('/walk/routes/:id')
 
 router.route('/events')
     .get(getEvents);
+
+router.route('/events/filter')
+    .get(filterEvents);
 
 export default router;

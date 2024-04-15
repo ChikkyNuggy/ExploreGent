@@ -14,6 +14,9 @@ const hbs = exphbs.create({
   helpers: {
       json: function (context) {
           return JSON.stringify(context);
+      },
+      formatDate: function (date) {
+        return new Date(date).toLocaleDateString('nl-BE');
       }
   }
 });

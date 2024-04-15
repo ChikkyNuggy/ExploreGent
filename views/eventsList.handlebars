@@ -1,0 +1,12 @@
+<ul>
+    {{#each events}}
+    <li>
+        <img src="/public/images/{{this.image_path}}" alt="{{this.name}}">
+        <div class="event-info">
+            <h2>{{this.name}}</h2>
+            <p>{{this.location}}</p>
+            <p>{{{formatDate this.start_date}}} - {{{formatDate this.end_date}}}</p>
+        </div>
+    </li>
+    {{/each}}
+</ul>

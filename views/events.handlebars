@@ -1,0 +1,104 @@
+<div class="container">
+    <div class="search-filter" >
+        <div class="search">
+            <input type="text" name="term" id="term" hx-target=".events" hx-trigger="keyup change" hx-get="/events/filter" hx-include="#date">
+        </div>
+        <div class="filter">
+            <input type="date" name="date" id="date" hx-target=".events" hx-trigger="change" hx-get="/events/filter" hx-include="#term">
+        </div>
+    </div>
+    <div class="events">
+        <ul>
+            {{#each events}}
+            <li>
+                <img src="/public/images/{{this.image_path}}" alt="{{this.name}}">
+                <div class="event-info">
+                    <h2>{{this.name}}</h2>
+                    <p>{{this.location}}</p>
+                    <p>{{{formatDate this.start_date}}} - {{{formatDate this.end_date}}}</p>
+                </div>
+            </li>
+            {{/each}}
+        </ul>
+    </div>
+</div>
+
+<style>
+    .container {
+        display: flex;
+        flex-direction: column;
+        gap: 2rem;
+        width: 90%;
+        margin: 0 auto;
+    }
+
+    .search-filter {
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+        width: 70%;
+        margin: 0 auto;
+    }
+
+    .search-filter input{
+        width: 90%;
+        padding: .5rem 1.5rem;
+        background-color: var(--black);
+        color: var(--white);
+        border: 3px solid var(--white);
+        margin-bottom: 3rem;
+    }
+
+    .search{
+        width: 50%;
+    }
+
+    .filter{
+        width: 17%;
+    }
+
+    .filter input[type="date"]{
+        display: flex;
+        flex-direction: row-reverse;
+    }
+
+    .events ul{
+        list-style: none;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-around;
+        gap: 2rem;
+        padding: 0;
+        margin: 0 auto;
+        width: 100%;
+    }
+
+    .events li{
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+        {{!-- transition: all .3s ease-in-out; --}}
+    }
+
+    {{!-- .events li:hover{
+        transform:translateY(-.5rem); 
+    } --}}
+
+    .events li img{
+        height: 10.063rem;
+        object-fit: cover;
+        object-position: 0 20%;
+    }
+
+    .events li h2 {
+        font-size: 3rem;
+        font-weight: 900;
+        margin: 0;
+    }
+
+    .events li p {
+        font-size: 1rem;
+        font-weight: 400;
+        margin: 0;
+    }
+</style>
